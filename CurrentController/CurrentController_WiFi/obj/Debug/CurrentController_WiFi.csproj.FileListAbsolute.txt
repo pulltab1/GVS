@@ -1,0 +1,9 @@
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\bin\Debug\CurrentController_WiFi.exe.config
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\bin\Debug\CurrentController_WiFi.exe
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\bin\Debug\CurrentController_WiFi.pdb
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\obj\Debug\CurrentController_WiFi.Form1.resources
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\obj\Debug\CurrentController_WiFi.Properties.Resources.resources
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\obj\Debug\CurrentController_WiFi.csproj.GenerateResource.Cache
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\obj\Debug\CurrentController_WiFi.exe
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\obj\Debug\CurrentController_WiFi.pdb
+C:\Users\Main\OneDrive\GVS\CurrentController\CurrentController_WiFi\obj\Debug\CurrentController_WiFi.csprojResolveAssemblyReference.cache
