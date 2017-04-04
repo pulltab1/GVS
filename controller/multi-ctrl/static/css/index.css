@@ -1,0 +1,16 @@
+body {
+  padding-top: 70px;
+  color: #666666;
+}
+
+.content {
+  padding-top: 30px;
+}
+
+.navbar-brand {
+  color: #ffffff;
+}
+
+.bg-primary {
+  background-color: #0275d8;
+}
