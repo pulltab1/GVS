@@ -5,12 +5,12 @@
   <li class="active"><a href="/">Controller</a></li>
   <li><a href="/network">Network</a></li>
 </ul>
-<div class="content">
-  <form class="form-horizontal" id="exec-form">
+<div class="content col-sm-6">
+  <form class="form-horizontal" id="open-form" style="{% if is_connected %}display:none;{% endif %}">
     <div class="form-group">
-      <label class="control-label col-sm-1" for="device">Device</label>
+      <label class="control-label col-sm-1" for="device">Dev</label>
       <div class="col-sm-11">
-        <select class="selectpicker" id="device">
+        <select class="selectpicker" id="device" name="device">
           {% for device in devices %}
             <option value={{ device }}>{{ device.split('/')[2] }}</option>
           {% endfor %}
@@ -18,9 +18,23 @@
       </div>
     </div>
     <div class="form-group">
+      <div class="col-sm-offset-1 col-sm-11">
+        <button id="open-button" class="btn btn-primary">接続</button>
+      </div>
+    </div>
+  </form>
+  <form class="form-horizontal" id="close-form" style="{% if is_connected == False %}display:none;{% endif %}">
+    <div class="form-group">
+      <div class="col-sm-offset-1 col-sm-11">
+        <button id="close-button" class="btn btn-danger">切断</button>
+      </div>
+    </div>
+  </form>
+  <form class="form-horizontal" id="exec-form" method="POST" action="/execute" style="{% if is_connected == False %}display:none;{% endif %}">
+    <div class="form-group">
       <label class="control-label col-sm-1" for="STA">STA</label>
-      <div class="col-sm-11" id="STA">
-        <select class="selectpicker">
+      <div class="col-sm-11">
+        <select class="selectpicker" id="STA" name="STA">
           <option value="0">0</option>
           <option value="1">1</option>
         </select>
@@ -28,8 +42,8 @@
     </div>
     <div class="form-group">
       <label class="control-label col-sm-1" for="DIR">DIR</label>
-      <div class="col-sm-11" id="DIR">
-        <select class="selectpicker">
+      <div class="col-sm-11">
+        <select class="selectpicker" id="DIR" name="DIR">
           <option value="0">0</option>
           <option value="1">1</option>
         </select>
@@ -37,8 +51,8 @@
     </div>
     <div class="form-group">
       <label class="control-label col-sm-1" for="MOD">MOD</label>
-      <div class="col-sm-11" id="MOD">
-        <select class="selectpicker">
+      <div class="col-sm-11">
+        <select class="selectpicker" id="MOD" name="MOD">
           <option value="0">0</option>
           <option value="1">1</option>
         </select>
@@ -46,8 +60,8 @@
     </div>
     <div class="form-group">
       <label class="control-label col-sm-1" for="NTF">NTF</label>
-      <div class="col-sm-11" id="NTF">
-        <select class="selectpicker">
+      <div class="col-sm-11">
+        <select class="selectpicker" id="NTF" name="NTF">
           <option value="0">0</option>
           <option value="1">1</option>
         </select>
@@ -60,24 +74,17 @@
     </div>
   </form>
 </div>
-<script>
-  $('#exec-button').on('click', (event) => {
-    event.preventDefault();
-    var $form = $(this);
-    var $button = $form.find('button');
-
-    $.ajax({
-      url: $form.attr('/execute'),
-      type: $form.attr('POST'),
-      data: $form.serialize(),
-      timeout: 10000,
-      beforeSend: (xhr, settings) => {
-        $button.attr('disabled', true);
-      },
-      complete: (xhr, textStatus) => {
-        $button.attr('disabled', false);
-      }
-    });
-  });
-</script>
+<div class="content col-sm-6">
+  <div class="form-group">
+    <div class="col-sm-12">
+      <textarea id="log-area" rows="22" cols="90" readonly></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-12">
+      <button class="btn btn-secondary" id="clear-button">Clear</button>
+    </div>
+  </div>
+</div>
+<script src="/static/js/index.js"></script>
 {% endblock %}

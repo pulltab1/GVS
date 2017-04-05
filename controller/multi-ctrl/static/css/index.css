@@ -14,3 +14,7 @@ body {
 .bg-primary {
   background-color: #0275d8;
 }
+
+.bootstrap-select {
+  width: 300px !important;
+}
